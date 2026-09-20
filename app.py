@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Modern Custom CSS Styling
+# Modern Custom CSS Styling (Includes Footer & Badge Hiding)
 st.markdown(
     """
     <style>
@@ -38,6 +38,14 @@ st.markdown(
         border-color: #4CAF50;
         background-color: #262C3A;
     }
+
+    /* Hide Streamlit Footer, Main Menu, & Viewer Badges */
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    .stApp > header {visibility: hidden;}
+    [data-testid="stHeader"] {visibility: hidden;}
+    [data-testid="stStatusWidget"] {visibility: hidden;}
     </style>
     """,
     unsafe_allow_html=True
