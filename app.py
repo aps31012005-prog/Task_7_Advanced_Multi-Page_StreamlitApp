@@ -11,7 +11,7 @@ st.set_page_config(
     layout="wide"
 )
 
-# Modern Custom CSS Styling (Includes Footer & Badge Hiding)
+# Complete Clean UI CSS (Hides GitHub, Top Header, Status, Fullscreen Buttons)
 st.markdown(
     """
     <style>
@@ -39,13 +39,18 @@ st.markdown(
         background-color: #262C3A;
     }
 
-    /* Hide Streamlit Footer, Main Menu, & Viewer Badges */
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    .stApp > header {visibility: hidden;}
-    [data-testid="stHeader"] {visibility: hidden;}
-    [data-testid="stStatusWidget"] {visibility: hidden;}
+    /* Top Header, GitHub links, Fork button & Streamlit Menu Hide */
+    [data-testid="stHeader"] {display: none !important;}
+    #MainMenu {visibility: hidden !important;}
+    footer {visibility: hidden !important;}
+    header {visibility: hidden !important;}
+    
+    /* Toolbar elements, Fullscreen & Streamlit badges */
+    .stApp > header {display: none !important;}
+    button[title="View fullscreen"] {display: none !important;}
+    [data-testid="stElementToolbar"] {display: none !important;}
+    [data-testid="stStyledFullScreenButton"] {display: none !important;}
+    [data-testid="stStatusWidget"] {display: none !important;}
     </style>
     """,
     unsafe_allow_html=True
